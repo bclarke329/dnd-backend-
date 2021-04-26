@@ -1,6 +1,9 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :update, :destroy]
+  
+  include ActionController::RequestForgeryProtection
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
 
+  before_action :set_character, only: [:show, :update, :destroy]
   # GET /characters
   def index
     @characters = Character.all
@@ -46,6 +49,6 @@ class CharactersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def character_params
-      params.require(:character).permit(:name, :race, :class, :equipment)
+      params.permit(:character).permit(:name, :race, :class, :alignment, :primary_weapon, :secondary_weapon)
     end
 end
