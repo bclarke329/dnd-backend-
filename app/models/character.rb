@@ -1,3 +1,4 @@
 class Character < ApplicationRecord
-    belongs_to :user, optional: true
+    belongs_to :party
+    validates: :name, uniqueness: true
 end

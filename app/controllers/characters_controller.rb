@@ -18,7 +18,9 @@ class CharactersController < ApplicationController
 
   # POST /characters
   def create
+    @party = Party.find_by_id(params[:id])
     @character = Character.new(character_params)
+    @character.party = @character
 
     if @character.save
       render json: @character, status: :created, location: @character
