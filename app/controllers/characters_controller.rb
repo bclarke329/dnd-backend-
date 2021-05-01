@@ -19,7 +19,7 @@ class CharactersController < ApplicationController
 
   # POST /characters
   def create
-    party = Party.find_by_id(params[:id])
+    party = Party.find_or_create_by(params[:id])
     character = Character.new(character_params)
     character.party = party
     character.save
@@ -52,6 +52,6 @@ class CharactersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def character_params
-      params.require(:character).permit(:name, :race, :character_class, :alignment, :primary_weapon, :secondary_weapon)
+      params.require(:character).permit(:name, :race, :character_class, :alignment, :primary_weapon, :secondary_weapon, :party, :party_id)
     end
 end
