@@ -3,45 +3,45 @@ class PartiesController < ApplicationController
 
   # GET /parties
   def index
-    @parties = Party.all
+    parties = Party.all
 
-    render json: @parties
+    render json: parties
   end
 
   # GET /parties/1
   def show
-    render json: @party
+    render json: party
   end
 
   # POST /parties
   def create
-    @party = Party.new(party_params)
-
-    if @party.save
-      render json: @party, status: :created, location: @party
+    party = Party.new(party_params)
+    party.save
+    if party.save
+      render json: party, status: :created, location: party
     else
-      render json: @party.errors, status: :unprocessable_entity
+      render json: party.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /parties/1
   def update
-    if @party.update(party_params)
-      render json: @party
+    if party.update(party_params)
+      render json: party
     else
-      render json: @party.errors, status: :unprocessable_entity
+      render json: party.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /parties/1
   def destroy
-    @party.destroy
+    party.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_party
-      @party = Party.find(params[:id])
+      party = Party.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
