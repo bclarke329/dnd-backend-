@@ -9,9 +9,8 @@ Accessing Application
 -----------
 To open the application:
 
-Fork and Clone this repository
-
-Fork and clone the backend repository "https://github.com/bclarke329/dnd-backend-"
+Fork and clone this repository
+Fork and clone frontend repository
 
 Make sure both tabs are open in your terminal
 
