@@ -15,7 +15,8 @@ class PartiesController < ApplicationController
 
   # POST /parties
   def create
-    party = Party.new(party_params)
+    party = Party.find_or_create_by(party_params)
+    # params[:id] = party_found_or_created.id
     party.save
     if party.save
       render json: party, status: :created, location: party
@@ -46,6 +47,6 @@ class PartiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def party_params
-      params.require(:party).permit(:party_name)
+      params.require(:party).permit(:party_id, :party_name)
     end
 end
