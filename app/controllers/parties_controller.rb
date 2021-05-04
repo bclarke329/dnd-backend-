@@ -16,7 +16,6 @@ class PartiesController < ApplicationController
   # POST /parties
   def create
     party = Party.find_or_create_by(party_params)
-    # params[:id] = party_found_or_created.id
     party.save
     if party.save
       render json: party, status: :created, location: party

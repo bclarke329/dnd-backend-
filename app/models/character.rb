@@ -1,5 +1,5 @@
 class Character < ApplicationRecord
-    belongs_to :party, optional: true
+    belongs_to :party
     
 
 
