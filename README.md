@@ -1,24 +1,8 @@
-# README
+Dungeons & Dragons Character Creator Backend
+############
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my backend repository for my Javascript project for Flatiron School.
+I used a Ruby On Rails API backend, with HTML, CSS, and Javascript for my frontend. 
+Both end were created on separate repositories to keep the project better organized.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Frontend Repo is here "https://github.com/bclarke329/dnd-frontend"
